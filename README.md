@@ -18,7 +18,7 @@
 Опишите принципы построения системы и их разграничение или разбивку между базами данных.
 ОТВЕТ: 
 Исходная БД: library_db
- - users
+ - users (id 1 - 600 000)
  - books  
  - shops
 
@@ -28,4 +28,19 @@
  - СЕРВЕР 3: shops_db (только для shops)
 <img width="1112" height="594" alt="image" src="https://github.com/user-attachments/assets/931a675a-cb78-4963-bc6c-c5d4d4bccb1e" />
 
+#### Горизонтальный шардинг:
+СЕРВЕР 1: db_shard_1
+ - users_1 (id 1-200 000)
+ - books  
+ - shops
 
+СЕРВЕР 2: db_shard_2  
+ - users (id 200 001 - 400 000)
+ - books  
+ - shops
+
+СЕРВЕР 3: db_shard_3
+ - users (id 400 001 - 600 000)
+ - books  
+ - shops
+<img width="1353" height="335" alt="image" src="https://github.com/user-attachments/assets/8ec7dc6b-3549-4e74-a7e3-2428affe58cc" />

@@ -23,3 +23,6 @@
 
 ### Задание 3. MySQL
 3.1. С помощью официальной документации приведите пример команды инкрементного резервного копирования базы данных MySQL.
+#### ОТВЕТ: 
+##### 1) mysqldump -u username -p --single-transaction --flush-logs --master-data=2 --all-databases > full_backup_$(date +%Y%m%d).sql - полное копирование
+##### 2) mysql -u username -p -e "FLUSH BINARY LOGS;" -> cp /var/lib/mysql/mysql-bin.0* /backup/incremental/ - копирование бинарных логов, созданных после полного копирования (инкрементное копирование)
